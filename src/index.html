@@ -13,6 +13,23 @@
         font-family: myFirstFont;
         color: #6ca4d4;
 
+
+    }
+
+    .example-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .example-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     @font-face {
@@ -216,7 +233,23 @@
     <p>
     </div>
     </div> -->
+    <div class="example-text">
+      Todos os processadores tem um set de instruções que, basicamente, fazem operações lógicas ou aritméticas e movem valores
+      dentro da memória, o 6502 não é diferente. Nos próximos exemplos vamos poder conhecer um pouco de suas instruções.<br>
 
+      Ao lado você pode ver um código de exemplo, pressione o botão Assemble para compilar o código, e pressione o botão Run para 
+      rodar o exemplo.<br>
+
+      No canto inferior direito você verá uma caixa de debug com os valores contidos nos registradores principais, você também 
+      rodar o programa linha por linha marcando essa caixa, nela cada regitador tem um significado.<br><br>
+
+      A -> registrador do acumulador, usado para operações lógicas e aritméticas<br>
+      X e Y -> registradores que geralmente são usados como ponteiros<br>
+      SP -> registrador stack pointer, que aponta para o ultimo elemento adicionado na memória de pilha<br>
+      PC -> registrador program counter, aponta para a linha de código que está sendo executada<br><br>
+
+      Sabendo disso, podemos passar para o próximo exemplo
+    </div>
 
     <div class="example-container">
       <div class="widget">
@@ -291,25 +324,20 @@ BRK       ;Break - Encerra a execução do programa
     
           
       </div>
-      <div class="example-text">
-      Todos os processadores tem um set de instruções que, basicamente, fazem operações lógicas ou aritméticas e movem valores
-      dentro da memória, o 6502 não é diferente. Nos próximos exemplos vamos poder conhecer um pouco de suas instruções.<br>
-
-      Ao lado você pode ver um código de exemplo, pressione o botão Assemble para compilar o código, e pressione o botão Run para 
-      rodar o exemplo.<br>
-
-      No canto inferior direito você verá uma caixa de debug com os valores contidos nos registradores principais, você também 
-      rodar o programa linha por linha marcando essa caixa, nela cada regitador tem um significado.<br><br>
-
-      A -> registrador do acumulador, usado para operações lógicas e aritméticas<br>
-      X e Y -> registradores que geralmente são usados como ponteiros<br>
-      SP -> registrador stack pointer, que aponta para o ultimo elemento adicionado na memória de pilha<br>
-      PC -> registrador program counter, aponta para a linha de código que está sendo executada<br><br>
-
-      Sabendo disso, podemos passar para o próximo exemplo
-      </div>
     </div>
 
+    <div class="example-text">
+      Nesse primeiro exemplo, vamos aprender sobre um comando básico, essêncial para qualquer microprocessador, os comandos
+      de mover elementos na memória <br><br>
+      LDA -> Carrega o acumulador com o valor que procede a instrução<br>
+      STA -> Carrega o valor do acumulador no endereço de memória com valor igual ao que procede a instrução<br><br>
+
+      Se tudo ocorreu como esperado, ao rodar o programa, os 3 primeiros pixels do monitor do canto estarão coloridos, isso 
+      acontece pois estamos carregando valores na memória de vídeo da nossa aplicação (endereços entre $200 e $5ff).<br>
+
+      No programa você deve ter percebido a presença de alguns simbolos especiais antes de alguns números, $ indica que o número
+      é um valor hexadecimal e # indica que estamos falando de um número literal e não de um endereço de memória.
+    </div>
 
     <div class="example-container">
       <div class="widget">
@@ -385,20 +413,12 @@ STA $0202
     
           
       </div>
+      </div>
       <div class="example-text">
-      Nesse primeiro exemplo, vamos aprender sobre um comando básico, essêncial para qualquer microprocessador, os comandos
-      de mover elementos na memória <br><br>
-      LDA -> Carrega o acumulador com o valor que procede a instrução<br>
-      STA -> Carrega o valor do acumulador no endereço de memória com valor igual ao que procede a instrução<br><br>
-
-      Se tudo ocorreu como esperado, ao rodar o programa, os 3 primeiros pixels do monitor do canto estarão coloridos, isso 
-      acontece pois estamos carregando valores na memória de vídeo da nossa aplicação (endereços entre $200 e $5ff).<br>
-
-      No programa você deve ter percebido a presença de alguns simbolos especiais antes de alguns números, $ indica que o número
-      é um valor hexadecimal e # indica que estamos falando de um número literal e não de um endereço de memória.
-      </div>
-      </div>
-
+        No geral, se tratam de instruções simples, entretanto, unindo uma gama de instruções simples, conseguimos criar
+        comportamento complexo.<br>
+        O programa ao lado desenha o logo do ICMC na memória de vídeo.
+        </div>
     
       <div class="example-container">
         <div class="widget">
@@ -2517,13 +2537,11 @@ STA 1535
       
             
         </div>
+        
+        </div>
         <div class="example-text">
-        No geral, se tratam de instruções simples, entretanto, unindo uma gama de instruções simples, conseguimos criar
-        comportamento complexo.<br>
-        O programa ao lado desenha o logo do ICMC na memória de vídeo.
-        </div>
-        </div>
-    
+          As possibilidades são infinitas, por exemplo, ao lado temos uma implementação do clássico jogo snake 
+          </div>
         <div class="example-container">
           <div class="widget">
               <div class="buttons">
@@ -2867,9 +2885,7 @@ gameOver:
         
               
           </div>
-          <div class="example-text">
-          As possibilidades são infinitas, por exemplo, ao lado temos uma implementação do clássico jogo snake 
-          </div>
+          
           </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
