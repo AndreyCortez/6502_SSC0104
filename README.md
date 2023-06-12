@@ -1,5 +1,13 @@
 # Página Web sobre 6502 #
-Este é o repositório do projeto da página web sobre o processador 6502, uma CPU histórica e influente na história da computação. A página web foi desenvolvida utilizando HTML, JavaScript e CSS, e tem como objetivo fornecer informações sobre o 6502, apresentar uma linha do tempo relevante e disponibilizar simuladores de linguagem assembly, incluindo aplicações práticas como criação de imagens e o jogo Snake.
+Este é o repositório do projeto da página web sobre o processador 6502, uma CPU histórica e influente na história da computação. Esta página web foi desenvolvida como parte da disciplina SSC0104 - Evolução Histórica da Computação e Aplicações (2023), ministrada pelo docente Claudio Fabiano Motta Toledo. O projeto foi realizado por um grupo de alunos, que incluem:
+
++ Andrey Cortez Rufino - 11819487
++ Daniel Martins Arrais - 11819445
++ Francyélio de Jesus Campos Lima - 13676537
++ Gabriel Martins Monteiro - 14572099
+
+Utilizando HTML, JavaScript e CSS, o objetivo deste projeto é fornecer informações sobre o processador 6502, apresentar uma linha do tempo relevante e disponibilizar simuladores de linguagem assembly, incluindo aplicações práticas como criação de imagens e o jogo Snake.
+
 
 ## Recursos disponíveis ##
 Informações sobre o processador 6502: Nesta seção, você encontrará uma descrição detalhada do processador 6502, suas especificações técnicas e sua importância na história da computação. Além disso, serão abordados exemplos de aplicação e casos de uso relevantes.
