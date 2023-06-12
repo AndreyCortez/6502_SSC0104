@@ -10,6 +10,9 @@
     body {
         background-color: #07497b;
         text-align: center;
+        font-family: myFirstFont;
+        color: #6ca4d4;
+
     }
 
     @font-face {
@@ -41,6 +44,33 @@
     .container img{
         margin: 20px;
     }
+
+    .timeline {
+		margin-top: 30px;
+	}
+
+	.timeline-item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 30px;
+	}
+
+	.timeline-item .date {
+		font-size: 18px;
+		font-weight: bold;
+		margin-right: 20px;
+	}
+
+	.timeline-item .event {
+		font-size: 16px;
+	}
+
+	.timeline-item:last-child {
+		margin-bottom: 0;
+	}
+
+
     </style>
 </head>
 
@@ -48,23 +78,64 @@
 <h1>*** 6502 ***</h1>
 
 <p>O 6502 é um microprocessador de 8 bits que foi lançado em 1975 pela MOS Technology.
-     Ele foi um dos primeiros microprocessadores amplamente utilizados em computadores domésticos 
-     e sistemas embutidos durante a década de 1970 e início da década de 1980.</p>
-<div class="container">
-    <img src="../Images/mario.png" width="300" height="200">
-    <img src="../Images/pacman.png" width="200" height="200">
-</div>
+	Ele foi um dos primeiros microprocessadores amplamente utilizados em computadores domésticos
+	e sistemas embutidos durante a década de 1970 e início da década de 1980.</p>
 
 <p>O 6502 teve um impacto significativo na indústria da computação devido à sua arquitetura eficiente
-     e acessível. Ele foi projetado para ser usado em uma ampla variedade de aplicações e se tornou 
-     uma escolha popular para muitos fabricantes de computadores e consoles de jogos da época.</p>
+	e acessível. Ele foi projetado para ser usado em uma ampla variedade de aplicações e se tornou
+	uma escolha popular para muitos fabricantes de computadores e consoles de jogos da época.</p>
 
-<p>Uma das características notáveis do 6502 é o seu conjunto de instruções compacto, que permitia um 
-    código otimizado e um melhor uso da memória disponível. O processador também possuía um barramento de 
-    dados de 8 bits e um barramento de endereço de 16 bits, o que permitia acessar até 64 KB de memória. Além 
-    disso, o 6502 possuía um conjunto básico de registradores, como o acumulador (A), o registrador 
-    de índice X, o registrador de índice Y e um registrador de status que continha várias flags para
-     indicar condições como overflow, zero, negativo, entre outras.</p>
+  <div class="container">
+    <img src="../Images/mario.png" width="300" height="200">
+    <img src="../Images/pacman.png" width="200" height="200">
+  </div>
+
+<p>Uma das características notáveis do 6502 é o seu conjunto de instruções compacto, que permitia um
+	código otimizado e um melhor uso da memória disponível. O processador também possuía um barramento de
+	dados de 8 bits e um barramento de endereço de 16 bits, o que permitia acessar até 64 KB de memória. Além
+	disso, o 6502 possuía um conjunto básico de registradores, como o acumulador (A), o registrador
+	de índice X, o registrador de índice Y e um registrador de status que continha várias flags para
+	indicar condições como overflow, zero, negativo, entre outras.</p>
+
+<p>O 6502 também era conhecido por sua velocidade de clock relativamente alta para a época, permitindo um desempenho sólido em várias aplicações. Ele foi usado em computadores icônicos, como o Apple II, Commodore 64 e Atari 2600, além de muitos outros sistemas populares daquela época.</p>
+
+<p>A arquitetura do 6502 era baseada em ciclos de clock, onde cada instrução era executada em um determinado número de ciclos. Isso tornava o processador relativamente fácil de programar e permitia a criação de jogos e aplicativos complexos mesmo com recursos limitados.</p>
+
+<p>Um aspecto notável do 6502 era seu preço acessível. Enquanto muitos dos microprocessadores concorrentes eram caros, o 6502 era uma opção econômica para os fabricantes, tornando-o uma escolha popular para sistemas de baixo custo. Isso contribuiu para sua ampla adoção e popularidade.</p>
+
+<p>O sucesso do 6502 também foi impulsionado pela comunidade de programadores e entusiastas que criaram uma grande quantidade de software e jogos para os sistemas que o utilizavam. Essa comunidade ativa ajudou a estabelecer o 6502 como uma plataforma viável para o desenvolvimento de software e contribuiu para sua longevidade.</p>
+
+<p>Mesmo após décadas do seu lançamento original, o legado do 6502 ainda pode ser sentido hoje. Muitos emuladores e projetos de retrocomputação são dedicados a preservar e reviver os sistemas baseados no 6502. Sua arquitetura simples, porém poderosa, continua a ser estudada e apreciada por entusiastas de computação retro.</p>
+
+<p>Em resumo, o 6502 foi um microprocessador revolucionário que desempenhou um papel importante na história da computação. Sua arquitetura eficiente, preço acessível e popularidade o tornaram um dos processadores mais influentes da década de 1970 e início da década de 1980, deixando um legado duradouro na indústria da tecnologia.</p>
+
+<h2>Timeline do 6502</h2>
+<div class="timeline">
+	<div class="timeline-item">
+		<div class="date">1975</div>
+		<div class="event">Lançamento do microprocessador 6502 pela MOS Technology.</div>
+	</div>
+	<div class="timeline-item">
+		<div class="date">1976</div>
+		<div class="event">O 6502 é usado no computador Apple I, projetado por Steve Wozniak.</div>
+	</div>
+	<div class="timeline-item">
+		<div class="date">1977</div>
+		<div class="event">Lançamento do Apple II, que utiliza o 6502 como processador principal.</div>
+	</div>
+	<div class="timeline-item">
+		<div class="date">1982</div>
+		<div class="event">Lançamento do Commodore 64, um dos computadores mais vendidos da história, equipado com o 6502.</div>
+	</div>
+	<div class="timeline-item">
+		<div class="date">1985</div>
+		<div class="event">Lançamento do NES (Nintendo Entertainment System), console de videogame que utiliza uma versão modificada do 6502.</div>
+	</div>
+	<div class="timeline-item">
+		<div class="date">Atualmente</div>
+		<div class="event">O 6502 continua sendo estudado e usado em projetos de retrocomputação e emuladores para preservar a história da computação.</div>
+	</div>
+</div>
 
 
 <h2>Funcionamento Básico do Assembly do 6502</h2>
