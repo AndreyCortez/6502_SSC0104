@@ -17,11 +17,11 @@ Para utilizar a página web localmente, siga as instruções abaixo:
 
 1. Clone este repositório em seu computador:
 ```
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+gh repo clone danmarts/6502_WebSite
 ```
 2. Navegue até o diretório do projeto:
 ```
-cd nome-do-repositorio
+cd 6502_WebSite
 ```
 3. Abra o arquivo 'index.html' em seu navegador web:
 ```
