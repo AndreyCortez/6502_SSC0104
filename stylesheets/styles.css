@@ -5,29 +5,9 @@ body {
   font:14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color:#222;
-  margin:0 0 20px;
-}
 
 p, ul, ol, table, pre, dl {
   margin:0 0 20px;
-}
-
-h1, h2, h3 {
-  line-height:1.1;
-}
-
-h1 {
-  font-size:28px;
-}
-
-h2 {
-  color:#393939;
-}
-
-h3, h4, h5, h6 {
-  color:#494949;
 }
 
 a, a code {
@@ -121,6 +101,24 @@ footer {
   float:left;
   position:fixed;
   bottom:50px;
+}
+
+.example-container
+{
+  margin-inline: 250px;
+    display: flex;
+    align-self: center;
+}
+
+.example-text
+{
+  margin: 50px;
+    display: block;
+    width: 500px;
+    text-align: left;
+
+    font-family: myFirstFont;
+    src: url(../font/Silkscreen-Regular.ttf);
 }
 
 @media print, screen and (max-width: 960px) {

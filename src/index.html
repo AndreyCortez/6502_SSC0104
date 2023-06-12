@@ -22,6 +22,11 @@
     color: #6ca4d4;
     }
 
+    h2{
+    font-family: myFirstFont;
+    color: #6ca4d4;
+    }
+
     p {
     font-family: myFirstFont;
     color: #6ca4d4;
@@ -62,7 +67,11 @@
      indicar condições como overflow, zero, negativo, entre outras.</p>
 
 
-     <div class="widget">
+<h2>Funcionamento Básico do Assembly do 6502</h2>
+
+
+    <!-- <div class="example-container">
+    <div class="widget">
         <div class="buttons">
           <input type="button" value="Assemble" class="assembleButton" />
           <input type="button" value="Run" class="runButton" />
@@ -73,6 +82,2389 @@
         </div>
       
         <textarea class="code">
+
+        </textarea>
+      
+        <canvas class="screen" width="160" height="160"></canvas>
+      
+        <div class="debugger">
+          <input type="checkbox" class="debug" name="debug" />
+          <label for="debug">Debugger</label>
+          <div class="minidebugger"></div>
+          <div class="buttons">
+            <input type="button" value="Step" class="stepButton" />
+            <input type="button" value="Jump to..." class="gotoButton" />
+          </div>
+        </div>
+      
+        <div class="monitorControls">
+          <label for="monitoring">Monitor</label>
+          <input type="checkbox" class="monitoring" name="monitoring" />
+      
+          <label for="start">Start: $</label>
+          <input type="text" value="0" class="start" name="start" />
+          <label for="length">Length: $</label>
+          <input type="text" value="ff" class="length" name="length" />
+        </div>
+      
+        <div class="monitor"><pre><code></code></pre></div>
+        <div class="messages"><pre><code></code></pre></div>
+      
+        <div class="notes" style="display: none">Notes:
+      
+      Memory location $fe contains a new random byte on every instruction.
+      Memory location $ff contains the ascii code of the last key pressed.
+      
+      Memory locations $200 to $5ff map to the screen pixels. Different values will
+      draw different colour pixels. The colours are:
+      
+      $0: Black
+      $1: White
+      $2: Red
+      $3: Cyan
+      $4: Purple
+      $5: Green
+      $6: Blue
+      $7: Yellow
+      $8: Orange
+      $9: Brown
+      $a: Light red
+      $b: Dark grey
+      $c: Grey
+      $d: Light green
+      $e: Light blue
+      $f: Light grey
+          </div>
+     
+  
+        
+    </div>
+    <div class="example-text">
+    <p>
+    No primeiro exemplo vamos falar d   
+    <p>
+    </div>
+    </div> -->
+
+
+    <div class="example-container">
+      <div class="widget">
+          <div class="buttons">
+            <input type="button" value="Assemble" class="assembleButton" />
+            <input type="button" value="Run" class="runButton" />
+            <input type="button" value="Reset" class="resetButton" />
+            <input type="button" value="Hexdump" class="hexdumpButton" />
+            <input type="button" value="Disassemble" class="disassembleButton" />
+            <input type="button" value="Notes" class="notesButton" />
+          </div>
+        
+          <textarea class="code">
+LDA #$c0  ;Carrega o valor $c0 no acumulador
+TAX       ;Transfere o valor do acumulador para o registrador X
+INX       ;Incrementa o valor no registrador X
+ADC #$c4  ;Adiciona o valor $c4 ao acumulador
+BRK       ;Break - Encerra a execução do programa
+          </textarea>
+        
+          <canvas class="screen" width="160" height="160"></canvas>
+        
+          <div class="debugger">
+            <input type="checkbox" class="debug" name="debug" />
+            <label for="debug">Debugger</label>
+            <div class="minidebugger"></div>
+            <div class="buttons">
+              <input type="button" value="Step" class="stepButton" />
+              <input type="button" value="Jump to..." class="gotoButton" />
+            </div>
+          </div>
+        
+          <div class="monitorControls">
+            <label for="monitoring">Monitor</label>
+            <input type="checkbox" class="monitoring" name="monitoring" />
+        
+            <label for="start">Start: $</label>
+            <input type="text" value="0" class="start" name="start" />
+            <label for="length">Length: $</label>
+            <input type="text" value="ff" class="length" name="length" />
+          </div>
+        
+          <div class="monitor"><pre><code></code></pre></div>
+          <div class="messages"><pre><code></code></pre></div>
+        
+          <div class="notes" style="display: none">Notes:
+        
+        Memory location $fe contains a new random byte on every instruction.
+        Memory location $ff contains the ascii code of the last key pressed.
+        
+        Memory locations $200 to $5ff map to the screen pixels. Different values will
+        draw different colour pixels. The colours are:
+        
+        $0: Black
+        $1: White
+        $2: Red
+        $3: Cyan
+        $4: Purple
+        $5: Green
+        $6: Blue
+        $7: Yellow
+        $8: Orange
+        $9: Brown
+        $a: Light red
+        $b: Dark grey
+        $c: Grey
+        $d: Light green
+        $e: Light blue
+        $f: Light grey
+            </div>
+       
+    
+          
+      </div>
+      <div class="example-text">
+      Todos os processadores tem um set de instruções que, basicamente, fazem operações lógicas ou aritméticas e movem valores
+      dentro da memória, o 6502 não é diferente. Nos próximos exemplos vamos poder conhecer um pouco de suas instruções.<br>
+
+      Ao lado você pode ver um código de exemplo, pressione o botão Assemble para compilar o código, e pressione o botão Run para 
+      rodar o exemplo.<br>
+
+      No canto inferior direito você verá uma caixa de debug com os valores contidos nos registradores principais, você também 
+      rodar o programa linha por linha marcando essa caixa, nela cada regitador tem um significado.<br><br>
+
+      A -> registrador do acumulador, usado para operações lógicas e aritméticas<br>
+      X e Y -> registradores que geralmente são usados como ponteiros<br>
+      SP -> registrador stack pointer, que aponta para o ultimo elemento adicionado na memória de pilha<br>
+      PC -> registrador program counter, aponta para a linha de código que está sendo executada<br><br>
+
+      Sabendo disso, podemos passar para o próximo exemplo
+      </div>
+    </div>
+
+
+    <div class="example-container">
+      <div class="widget">
+          <div class="buttons">
+            <input type="button" value="Assemble" class="assembleButton" />
+            <input type="button" value="Run" class="runButton" />
+            <input type="button" value="Reset" class="resetButton" />
+            <input type="button" value="Hexdump" class="hexdumpButton" />
+            <input type="button" value="Disassemble" class="disassembleButton" />
+            <input type="button" value="Notes" class="notesButton" />
+          </div>
+        
+          <textarea class="code">
+LDA #$01
+STA $0200
+LDA #$05
+STA $0201
+LDA #$08
+STA $0202
+          </textarea>
+        
+          <canvas class="screen" width="160" height="160"></canvas>
+        
+          <div class="debugger">
+            <input type="checkbox" class="debug" name="debug" />
+            <label for="debug">Debugger</label>
+            <div class="minidebugger"></div>
+            <div class="buttons">
+              <input type="button" value="Step" class="stepButton" />
+              <input type="button" value="Jump to..." class="gotoButton" />
+            </div>
+          </div>
+        
+          <div class="monitorControls">
+            <label for="monitoring">Monitor</label>
+            <input type="checkbox" class="monitoring" name="monitoring" />
+        
+            <label for="start">Start: $</label>
+            <input type="text" value="0" class="start" name="start" />
+            <label for="length">Length: $</label>
+            <input type="text" value="ff" class="length" name="length" />
+          </div>
+        
+          <div class="monitor"><pre><code></code></pre></div>
+          <div class="messages"><pre><code></code></pre></div>
+        
+          <div class="notes" style="display: none">Notes:
+        
+        Memory location $fe contains a new random byte on every instruction.
+        Memory location $ff contains the ascii code of the last key pressed.
+        
+        Memory locations $200 to $5ff map to the screen pixels. Different values will
+        draw different colour pixels. The colours are:
+        
+        $0: Black
+        $1: White
+        $2: Red
+        $3: Cyan
+        $4: Purple
+        $5: Green
+        $6: Blue
+        $7: Yellow
+        $8: Orange
+        $9: Brown
+        $a: Light red
+        $b: Dark grey
+        $c: Grey
+        $d: Light green
+        $e: Light blue
+        $f: Light grey
+            </div>
+       
+    
+          
+      </div>
+      <div class="example-text">
+      Nesse primeiro exemplo, vamos aprender sobre um comando básico, essêncial para qualquer microprocessador, os comandos
+      de mover elementos na memória <br><br>
+      LDA -> Carrega o acumulador com o valor que procede a instrução<br>
+      STA -> Carrega o valor do acumulador no endereço de memória com valor igual ao que procede a instrução<br><br>
+
+      Se tudo ocorreu como esperado, ao rodar o programa, os 3 primeiros pixels do monitor do canto estarão coloridos, isso 
+      acontece pois estamos carregando valores na memória de vídeo da nossa aplicação (endereços entre $200 e $5ff).<br>
+
+      No programa você deve ter percebido a presença de alguns simbolos especiais antes de alguns números, $ indica que o número
+      é um valor hexadecimal e # indica que estamos falando de um número literal e não de um endereço de memória.
+      </div>
+      </div>
+
+    
+      <div class="example-container">
+        <div class="widget">
+            <div class="buttons">
+              <input type="button" value="Assemble" class="assembleButton" />
+              <input type="button" value="Run" class="runButton" />
+              <input type="button" value="Reset" class="resetButton" />
+              <input type="button" value="Hexdump" class="hexdumpButton" />
+              <input type="button" value="Disassemble" class="disassembleButton" />
+              <input type="button" value="Notes" class="notesButton" />
+            </div>
+          
+            <textarea class="code">
+LDA #255
+STA 512
+LDA #255
+STA 513
+LDA #255
+STA 514
+LDA #255
+STA 515
+LDA #255
+STA 516
+LDA #255
+STA 517
+LDA #255
+STA 518
+LDA #255
+STA 519
+LDA #0
+STA 520
+LDA #255
+STA 521
+LDA #255
+STA 522
+LDA #255
+STA 523
+LDA #255
+STA 524
+LDA #255
+STA 525
+LDA #255
+STA 526
+LDA #0
+STA 527
+LDA #0
+STA 528
+LDA #0
+STA 529
+LDA #255
+STA 530
+LDA #255
+STA 531
+LDA #255
+STA 532
+LDA #255
+STA 533
+LDA #255
+STA 534
+LDA #0
+STA 535
+LDA #0
+STA 536
+LDA #255
+STA 537
+LDA #255
+STA 538
+LDA #255
+STA 539
+LDA #255
+STA 540
+LDA #255
+STA 541
+LDA #255
+STA 542
+LDA #255
+STA 543
+LDA #255
+STA 544
+LDA #255
+STA 545
+LDA #255
+STA 546
+LDA #255
+STA 547
+LDA #255
+STA 548
+LDA #255
+STA 549
+LDA #255
+STA 550
+LDA #0
+STA 551
+LDA #0
+STA 552
+LDA #0
+STA 553
+LDA #255
+STA 554
+LDA #255
+STA 555
+LDA #255
+STA 556
+LDA #0
+STA 557
+LDA #0
+STA 558
+LDA #0
+STA 559
+LDA #0
+STA 560
+LDA #0
+STA 561
+LDA #255
+STA 562
+LDA #255
+STA 563
+LDA #255
+STA 564
+LDA #255
+STA 565
+LDA #0
+STA 566
+LDA #0
+STA 567
+LDA #0
+STA 568
+LDA #0
+STA 569
+LDA #0
+STA 570
+LDA #255
+STA 571
+LDA #255
+STA 572
+LDA #255
+STA 573
+LDA #255
+STA 574
+LDA #255
+STA 575
+LDA #255
+STA 576
+LDA #255
+STA 577
+LDA #255
+STA 578
+LDA #255
+STA 579
+LDA #255
+STA 580
+LDA #255
+STA 581
+LDA #0
+STA 582
+LDA #0
+STA 583
+LDA #0
+STA 584
+LDA #0
+STA 585
+LDA #0
+STA 586
+LDA #255
+STA 587
+LDA #0
+STA 588
+LDA #0
+STA 589
+LDA #0
+STA 590
+LDA #0
+STA 591
+LDA #0
+STA 592
+LDA #0
+STA 593
+LDA #0
+STA 594
+LDA #255
+STA 595
+LDA #255
+STA 596
+LDA #0
+STA 597
+LDA #0
+STA 598
+LDA #0
+STA 599
+LDA #0
+STA 600
+LDA #0
+STA 601
+LDA #0
+STA 602
+LDA #255
+STA 603
+LDA #255
+STA 604
+LDA #255
+STA 605
+LDA #255
+STA 606
+LDA #255
+STA 607
+LDA #255
+STA 608
+LDA #255
+STA 609
+LDA #255
+STA 610
+LDA #255
+STA 611
+LDA #255
+STA 612
+LDA #0
+STA 613
+LDA #0
+STA 614
+LDA #0
+STA 615
+LDA #255
+STA 616
+LDA #0
+STA 617
+LDA #255
+STA 618
+LDA #0
+STA 619
+LDA #0
+STA 620
+LDA #255
+STA 621
+LDA #0
+STA 622
+LDA #255
+STA 623
+LDA #255
+STA 624
+LDA #255
+STA 625
+LDA #0
+STA 626
+LDA #0
+STA 627
+LDA #0
+STA 628
+LDA #255
+STA 629
+LDA #0
+STA 630
+LDA #255
+STA 631
+LDA #255
+STA 632
+LDA #255
+STA 633
+LDA #0
+STA 634
+LDA #0
+STA 635
+LDA #255
+STA 636
+LDA #255
+STA 637
+LDA #255
+STA 638
+LDA #255
+STA 639
+LDA #255
+STA 640
+LDA #255
+STA 641
+LDA #255
+STA 642
+LDA #255
+STA 643
+LDA #255
+STA 644
+LDA #0
+STA 645
+LDA #0
+STA 646
+LDA #0
+STA 647
+LDA #255
+STA 648
+LDA #255
+STA 649
+LDA #0
+STA 650
+LDA #255
+STA 651
+LDA #0
+STA 652
+LDA #0
+STA 653
+LDA #0
+STA 654
+LDA #255
+STA 655
+LDA #255
+STA 656
+LDA #255
+STA 657
+LDA #0
+STA 658
+LDA #255
+STA 659
+LDA #0
+STA 660
+LDA #255
+STA 661
+LDA #255
+STA 662
+LDA #255
+STA 663
+LDA #255
+STA 664
+LDA #255
+STA 665
+LDA #0
+STA 666
+LDA #0
+STA 667
+LDA #255
+STA 668
+LDA #255
+STA 669
+LDA #255
+STA 670
+LDA #255
+STA 671
+LDA #255
+STA 672
+LDA #255
+STA 673
+LDA #255
+STA 674
+LDA #255
+STA 675
+LDA #255
+STA 676
+LDA #255
+STA 677
+LDA #0
+STA 678
+LDA #255
+STA 679
+LDA #255
+STA 680
+LDA #0
+STA 681
+LDA #0
+STA 682
+LDA #0
+STA 683
+LDA #0
+STA 684
+LDA #0
+STA 685
+LDA #0
+STA 686
+LDA #255
+STA 687
+LDA #255
+STA 688
+LDA #255
+STA 689
+LDA #0
+STA 690
+LDA #0
+STA 691
+LDA #255
+STA 692
+LDA #0
+STA 693
+LDA #0
+STA 694
+LDA #255
+STA 695
+LDA #0
+STA 696
+LDA #0
+STA 697
+LDA #0
+STA 698
+LDA #255
+STA 699
+LDA #255
+STA 700
+LDA #255
+STA 701
+LDA #255
+STA 702
+LDA #255
+STA 703
+LDA #255
+STA 704
+LDA #255
+STA 705
+LDA #255
+STA 706
+LDA #255
+STA 707
+LDA #255
+STA 708
+LDA #0
+STA 709
+LDA #0
+STA 710
+LDA #0
+STA 711
+LDA #0
+STA 712
+LDA #0
+STA 713
+LDA #0
+STA 714
+LDA #255
+STA 715
+LDA #255
+STA 716
+LDA #0
+STA 717
+LDA #0
+STA 718
+LDA #0
+STA 719
+LDA #0
+STA 720
+LDA #0
+STA 721
+LDA #255
+STA 722
+LDA #255
+STA 723
+LDA #255
+STA 724
+LDA #0
+STA 725
+LDA #0
+STA 726
+LDA #0
+STA 727
+LDA #0
+STA 728
+LDA #0
+STA 729
+LDA #255
+STA 730
+LDA #255
+STA 731
+LDA #255
+STA 732
+LDA #255
+STA 733
+LDA #255
+STA 734
+LDA #255
+STA 735
+LDA #255
+STA 736
+LDA #255
+STA 737
+LDA #255
+STA 738
+LDA #255
+STA 739
+LDA #255
+STA 740
+LDA #255
+STA 741
+LDA #0
+STA 742
+LDA #0
+STA 743
+LDA #0
+STA 744
+LDA #0
+STA 745
+LDA #255
+STA 746
+LDA #255
+STA 747
+LDA #255
+STA 748
+LDA #255
+STA 749
+LDA #0
+STA 750
+LDA #0
+STA 751
+LDA #0
+STA 752
+LDA #0
+STA 753
+LDA #255
+STA 754
+LDA #255
+STA 755
+LDA #255
+STA 756
+LDA #0
+STA 757
+LDA #0
+STA 758
+LDA #255
+STA 759
+LDA #0
+STA 760
+LDA #255
+STA 761
+LDA #255
+STA 762
+LDA #255
+STA 763
+LDA #255
+STA 764
+LDA #255
+STA 765
+LDA #255
+STA 766
+LDA #255
+STA 767
+LDA #255
+STA 768
+LDA #255
+STA 769
+LDA #255
+STA 770
+LDA #255
+STA 771
+LDA #255
+STA 772
+LDA #255
+STA 773
+LDA #255
+STA 774
+LDA #255
+STA 775
+LDA #0
+STA 776
+LDA #0
+STA 777
+LDA #0
+STA 778
+LDA #255
+STA 779
+LDA #255
+STA 780
+LDA #255
+STA 781
+LDA #0
+STA 782
+LDA #0
+STA 783
+LDA #0
+STA 784
+LDA #0
+STA 785
+LDA #255
+STA 786
+LDA #255
+STA 787
+LDA #255
+STA 788
+LDA #255
+STA 789
+LDA #255
+STA 790
+LDA #0
+STA 791
+LDA #0
+STA 792
+LDA #0
+STA 793
+LDA #255
+STA 794
+LDA #255
+STA 795
+LDA #255
+STA 796
+LDA #255
+STA 797
+LDA #255
+STA 798
+LDA #255
+STA 799
+LDA #255
+STA 800
+LDA #255
+STA 801
+LDA #255
+STA 802
+LDA #255
+STA 803
+LDA #255
+STA 804
+LDA #255
+STA 805
+LDA #0
+STA 806
+LDA #0
+STA 807
+LDA #0
+STA 808
+LDA #0
+STA 809
+LDA #255
+STA 810
+LDA #255
+STA 811
+LDA #255
+STA 812
+LDA #255
+STA 813
+LDA #0
+STA 814
+LDA #0
+STA 815
+LDA #0
+STA 816
+LDA #0
+STA 817
+LDA #0
+STA 818
+LDA #255
+STA 819
+LDA #255
+STA 820
+LDA #0
+STA 821
+LDA #0
+STA 822
+LDA #0
+STA 823
+LDA #0
+STA 824
+LDA #0
+STA 825
+LDA #0
+STA 826
+LDA #255
+STA 827
+LDA #255
+STA 828
+LDA #255
+STA 829
+LDA #255
+STA 830
+LDA #255
+STA 831
+LDA #255
+STA 832
+LDA #255
+STA 833
+LDA #255
+STA 834
+LDA #255
+STA 835
+LDA #255
+STA 836
+LDA #0
+STA 837
+LDA #0
+STA 838
+LDA #0
+STA 839
+LDA #0
+STA 840
+LDA #255
+STA 841
+LDA #0
+STA 842
+LDA #255
+STA 843
+LDA #255
+STA 844
+LDA #0
+STA 845
+LDA #255
+STA 846
+LDA #255
+STA 847
+LDA #255
+STA 848
+LDA #0
+STA 849
+LDA #0
+STA 850
+LDA #0
+STA 851
+LDA #255
+STA 852
+LDA #0
+STA 853
+LDA #0
+STA 854
+LDA #255
+STA 855
+LDA #255
+STA 856
+LDA #0
+STA 857
+LDA #0
+STA 858
+LDA #255
+STA 859
+LDA #255
+STA 860
+LDA #255
+STA 861
+LDA #255
+STA 862
+LDA #255
+STA 863
+LDA #255
+STA 864
+LDA #255
+STA 865
+LDA #255
+STA 866
+LDA #255
+STA 867
+LDA #255
+STA 868
+LDA #0
+STA 869
+LDA #0
+STA 870
+LDA #255
+STA 871
+LDA #255
+STA 872
+LDA #0
+STA 873
+LDA #0
+STA 874
+LDA #0
+STA 875
+LDA #0
+STA 876
+LDA #0
+STA 877
+LDA #255
+STA 878
+LDA #255
+STA 879
+LDA #255
+STA 880
+LDA #255
+STA 881
+LDA #255
+STA 882
+LDA #0
+STA 883
+LDA #0
+STA 884
+LDA #0
+STA 885
+LDA #255
+STA 886
+LDA #255
+STA 887
+LDA #0
+STA 888
+LDA #0
+STA 889
+LDA #0
+STA 890
+LDA #255
+STA 891
+LDA #255
+STA 892
+LDA #255
+STA 893
+LDA #255
+STA 894
+LDA #255
+STA 895
+LDA #255
+STA 896
+LDA #255
+STA 897
+LDA #255
+STA 898
+LDA #255
+STA 899
+LDA #0
+STA 900
+LDA #0
+STA 901
+LDA #0
+STA 902
+LDA #0
+STA 903
+LDA #255
+STA 904
+LDA #255
+STA 905
+LDA #255
+STA 906
+LDA #0
+STA 907
+LDA #255
+STA 908
+LDA #0
+STA 909
+LDA #255
+STA 910
+LDA #255
+STA 911
+LDA #255
+STA 912
+LDA #255
+STA 913
+LDA #255
+STA 914
+LDA #255
+STA 915
+LDA #0
+STA 916
+LDA #255
+STA 917
+LDA #0
+STA 918
+LDA #255
+STA 919
+LDA #255
+STA 920
+LDA #0
+STA 921
+LDA #0
+STA 922
+LDA #0
+STA 923
+LDA #0
+STA 924
+LDA #255
+STA 925
+LDA #255
+STA 926
+LDA #255
+STA 927
+LDA #255
+STA 928
+LDA #255
+STA 929
+LDA #255
+STA 930
+LDA #255
+STA 931
+LDA #255
+STA 932
+LDA #0
+STA 933
+LDA #255
+STA 934
+LDA #255
+STA 935
+LDA #255
+STA 936
+LDA #255
+STA 937
+LDA #255
+STA 938
+LDA #0
+STA 939
+LDA #0
+STA 940
+LDA #0
+STA 941
+LDA #255
+STA 942
+LDA #255
+STA 943
+LDA #255
+STA 944
+LDA #255
+STA 945
+LDA #255
+STA 946
+LDA #255
+STA 947
+LDA #255
+STA 948
+LDA #0
+STA 949
+LDA #255
+STA 950
+LDA #255
+STA 951
+LDA #255
+STA 952
+LDA #255
+STA 953
+LDA #255
+STA 954
+LDA #0
+STA 955
+LDA #255
+STA 956
+LDA #255
+STA 957
+LDA #255
+STA 958
+LDA #255
+STA 959
+LDA #255
+STA 960
+LDA #255
+STA 961
+LDA #255
+STA 962
+LDA #0
+STA 963
+LDA #0
+STA 964
+LDA #0
+STA 965
+LDA #255
+STA 966
+LDA #255
+STA 967
+LDA #255
+STA 968
+LDA #0
+STA 969
+LDA #0
+STA 970
+LDA #255
+STA 971
+LDA #0
+STA 972
+LDA #255
+STA 973
+LDA #255
+STA 974
+LDA #255
+STA 975
+LDA #255
+STA 976
+LDA #255
+STA 977
+LDA #0
+STA 978
+LDA #0
+STA 979
+LDA #0
+STA 980
+LDA #0
+STA 981
+LDA #0
+STA 982
+LDA #0
+STA 983
+LDA #255
+STA 984
+LDA #255
+STA 985
+LDA #255
+STA 986
+LDA #0
+STA 987
+LDA #0
+STA 988
+LDA #0
+STA 989
+LDA #255
+STA 990
+LDA #255
+STA 991
+LDA #255
+STA 992
+LDA #255
+STA 993
+LDA #255
+STA 994
+LDA #255
+STA 995
+LDA #0
+STA 996
+LDA #0
+STA 997
+LDA #255
+STA 998
+LDA #255
+STA 999
+LDA #255
+STA 1000
+LDA #255
+STA 1001
+LDA #0
+STA 1002
+LDA #0
+STA 1003
+LDA #0
+STA 1004
+LDA #0
+STA 1005
+LDA #255
+STA 1006
+LDA #255
+STA 1007
+LDA #255
+STA 1008
+LDA #255
+STA 1009
+LDA #0
+STA 1010
+LDA #0
+STA 1011
+LDA #0
+STA 1012
+LDA #255
+STA 1013
+LDA #0
+STA 1014
+LDA #255
+STA 1015
+LDA #255
+STA 1016
+LDA #255
+STA 1017
+LDA #255
+STA 1018
+LDA #255
+STA 1019
+LDA #0
+STA 1020
+LDA #255
+STA 1021
+LDA #255
+STA 1022
+LDA #255
+STA 1023
+LDA #255
+STA 1024
+LDA #255
+STA 1025
+LDA #255
+STA 1026
+LDA #0
+STA 1027
+LDA #0
+STA 1028
+LDA #255
+STA 1029
+LDA #255
+STA 1030
+LDA #255
+STA 1031
+LDA #255
+STA 1032
+LDA #0
+STA 1033
+LDA #0
+STA 1034
+LDA #255
+STA 1035
+LDA #255
+STA 1036
+LDA #0
+STA 1037
+LDA #0
+STA 1038
+LDA #255
+STA 1039
+LDA #255
+STA 1040
+LDA #255
+STA 1041
+LDA #255
+STA 1042
+LDA #0
+STA 1043
+LDA #255
+STA 1044
+LDA #255
+STA 1045
+LDA #0
+STA 1046
+LDA #255
+STA 1047
+LDA #255
+STA 1048
+LDA #255
+STA 1049
+LDA #255
+STA 1050
+LDA #0
+STA 1051
+LDA #0
+STA 1052
+LDA #255
+STA 1053
+LDA #255
+STA 1054
+LDA #255
+STA 1055
+LDA #255
+STA 1056
+LDA #255
+STA 1057
+LDA #255
+STA 1058
+LDA #0
+STA 1059
+LDA #0
+STA 1060
+LDA #255
+STA 1061
+LDA #255
+STA 1062
+LDA #255
+STA 1063
+LDA #0
+STA 1064
+LDA #0
+STA 1065
+LDA #0
+STA 1066
+LDA #255
+STA 1067
+LDA #255
+STA 1068
+LDA #0
+STA 1069
+LDA #0
+STA 1070
+LDA #255
+STA 1071
+LDA #255
+STA 1072
+LDA #255
+STA 1073
+LDA #255
+STA 1074
+LDA #0
+STA 1075
+LDA #255
+STA 1076
+LDA #255
+STA 1077
+LDA #0
+STA 1078
+LDA #0
+STA 1079
+LDA #255
+STA 1080
+LDA #255
+STA 1081
+LDA #255
+STA 1082
+LDA #0
+STA 1083
+LDA #0
+STA 1084
+LDA #255
+STA 1085
+LDA #255
+STA 1086
+LDA #255
+STA 1087
+LDA #255
+STA 1088
+LDA #255
+STA 1089
+LDA #255
+STA 1090
+LDA #255
+STA 1091
+LDA #0
+STA 1092
+LDA #0
+STA 1093
+LDA #255
+STA 1094
+LDA #255
+STA 1095
+LDA #255
+STA 1096
+LDA #0
+STA 1097
+LDA #0
+STA 1098
+LDA #0
+STA 1099
+LDA #0
+STA 1100
+LDA #0
+STA 1101
+LDA #0
+STA 1102
+LDA #255
+STA 1103
+LDA #255
+STA 1104
+LDA #255
+STA 1105
+LDA #255
+STA 1106
+LDA #0
+STA 1107
+LDA #255
+STA 1108
+LDA #255
+STA 1109
+LDA #0
+STA 1110
+LDA #255
+STA 1111
+LDA #255
+STA 1112
+LDA #255
+STA 1113
+LDA #255
+STA 1114
+LDA #255
+STA 1115
+LDA #0
+STA 1116
+LDA #255
+STA 1117
+LDA #255
+STA 1118
+LDA #255
+STA 1119
+LDA #255
+STA 1120
+LDA #255
+STA 1121
+LDA #255
+STA 1122
+LDA #255
+STA 1123
+LDA #0
+STA 1124
+LDA #255
+STA 1125
+LDA #255
+STA 1126
+LDA #255
+STA 1127
+LDA #255
+STA 1128
+LDA #255
+STA 1129
+LDA #0
+STA 1130
+LDA #0
+STA 1131
+LDA #0
+STA 1132
+LDA #0
+STA 1133
+LDA #255
+STA 1134
+LDA #255
+STA 1135
+LDA #255
+STA 1136
+LDA #255
+STA 1137
+LDA #0
+STA 1138
+LDA #0
+STA 1139
+LDA #0
+STA 1140
+LDA #0
+STA 1141
+LDA #0
+STA 1142
+LDA #255
+STA 1143
+LDA #255
+STA 1144
+LDA #255
+STA 1145
+LDA #255
+STA 1146
+LDA #0
+STA 1147
+LDA #0
+STA 1148
+LDA #0
+STA 1149
+LDA #255
+STA 1150
+LDA #255
+STA 1151
+LDA #255
+STA 1152
+LDA #255
+STA 1153
+LDA #255
+STA 1154
+LDA #255
+STA 1155
+LDA #255
+STA 1156
+LDA #0
+STA 1157
+LDA #255
+STA 1158
+LDA #0
+STA 1159
+LDA #255
+STA 1160
+LDA #255
+STA 1161
+LDA #0
+STA 1162
+LDA #255
+STA 1163
+LDA #0
+STA 1164
+LDA #255
+STA 1165
+LDA #255
+STA 1166
+LDA #255
+STA 1167
+LDA #255
+STA 1168
+LDA #255
+STA 1169
+LDA #255
+STA 1170
+LDA #255
+STA 1171
+LDA #0
+STA 1172
+LDA #0
+STA 1173
+LDA #255
+STA 1174
+LDA #0
+STA 1175
+LDA #255
+STA 1176
+LDA #0
+STA 1177
+LDA #255
+STA 1178
+LDA #0
+STA 1179
+LDA #255
+STA 1180
+LDA #255
+STA 1181
+LDA #255
+STA 1182
+LDA #255
+STA 1183
+LDA #255
+STA 1184
+LDA #255
+STA 1185
+LDA #255
+STA 1186
+LDA #255
+STA 1187
+LDA #0
+STA 1188
+LDA #0
+STA 1189
+LDA #0
+STA 1190
+LDA #0
+STA 1191
+LDA #255
+STA 1192
+LDA #0
+STA 1193
+LDA #0
+STA 1194
+LDA #0
+STA 1195
+LDA #255
+STA 1196
+LDA #255
+STA 1197
+LDA #255
+STA 1198
+LDA #255
+STA 1199
+LDA #255
+STA 1200
+LDA #255
+STA 1201
+LDA #255
+STA 1202
+LDA #255
+STA 1203
+LDA #255
+STA 1204
+LDA #0
+STA 1205
+LDA #0
+STA 1206
+LDA #0
+STA 1207
+LDA #0
+STA 1208
+LDA #0
+STA 1209
+LDA #0
+STA 1210
+LDA #0
+STA 1211
+LDA #0
+STA 1212
+LDA #255
+STA 1213
+LDA #255
+STA 1214
+LDA #255
+STA 1215
+LDA #255
+STA 1216
+LDA #255
+STA 1217
+LDA #255
+STA 1218
+LDA #255
+STA 1219
+LDA #255
+STA 1220
+LDA #255
+STA 1221
+LDA #255
+STA 1222
+LDA #255
+STA 1223
+LDA #0
+STA 1224
+LDA #0
+STA 1225
+LDA #0
+STA 1226
+LDA #0
+STA 1227
+LDA #0
+STA 1228
+LDA #255
+STA 1229
+LDA #0
+STA 1230
+LDA #255
+STA 1231
+LDA #255
+STA 1232
+LDA #255
+STA 1233
+LDA #0
+STA 1234
+LDA #255
+STA 1235
+LDA #0
+STA 1236
+LDA #0
+STA 1237
+LDA #255
+STA 1238
+LDA #255
+STA 1239
+LDA #0
+STA 1240
+LDA #255
+STA 1241
+LDA #0
+STA 1242
+LDA #255
+STA 1243
+LDA #255
+STA 1244
+LDA #255
+STA 1245
+LDA #255
+STA 1246
+LDA #255
+STA 1247
+LDA #255
+STA 1248
+LDA #255
+STA 1249
+LDA #255
+STA 1250
+LDA #255
+STA 1251
+LDA #255
+STA 1252
+LDA #255
+STA 1253
+LDA #255
+STA 1254
+LDA #255
+STA 1255
+LDA #255
+STA 1256
+LDA #255
+STA 1257
+LDA #255
+STA 1258
+LDA #255
+STA 1259
+LDA #0
+STA 1260
+LDA #0
+STA 1261
+LDA #0
+STA 1262
+LDA #255
+STA 1263
+LDA #255
+STA 1264
+LDA #255
+STA 1265
+LDA #0
+STA 1266
+LDA #0
+STA 1267
+LDA #0
+STA 1268
+LDA #0
+STA 1269
+LDA #255
+STA 1270
+LDA #255
+STA 1271
+LDA #255
+STA 1272
+LDA #255
+STA 1273
+LDA #255
+STA 1274
+LDA #255
+STA 1275
+LDA #255
+STA 1276
+LDA #255
+STA 1277
+LDA #255
+STA 1278
+LDA #255
+STA 1279
+LDA #255
+STA 1280
+LDA #255
+STA 1281
+LDA #255
+STA 1282
+LDA #255
+STA 1283
+LDA #255
+STA 1284
+LDA #255
+STA 1285
+LDA #255
+STA 1286
+LDA #255
+STA 1287
+LDA #255
+STA 1288
+LDA #255
+STA 1289
+LDA #255
+STA 1290
+LDA #255
+STA 1291
+LDA #0
+STA 1292
+LDA #255
+STA 1293
+LDA #0
+STA 1294
+LDA #0
+STA 1295
+LDA #0
+STA 1296
+LDA #0
+STA 1297
+LDA #0
+STA 1298
+LDA #255
+STA 1299
+LDA #0
+STA 1300
+LDA #255
+STA 1301
+LDA #255
+STA 1302
+LDA #255
+STA 1303
+LDA #255
+STA 1304
+LDA #255
+STA 1305
+LDA #255
+STA 1306
+LDA #255
+STA 1307
+LDA #255
+STA 1308
+LDA #255
+STA 1309
+LDA #255
+STA 1310
+LDA #255
+STA 1311
+LDA #255
+STA 1312
+LDA #255
+STA 1313
+LDA #255
+STA 1314
+LDA #255
+STA 1315
+LDA #255
+STA 1316
+LDA #255
+STA 1317
+LDA #255
+STA 1318
+LDA #255
+STA 1319
+LDA #255
+STA 1320
+LDA #255
+STA 1321
+LDA #255
+STA 1322
+LDA #255
+STA 1323
+LDA #255
+STA 1324
+LDA #255
+STA 1325
+LDA #255
+STA 1326
+LDA #0
+STA 1327
+LDA #255
+STA 1328
+LDA #0
+STA 1329
+LDA #255
+STA 1330
+LDA #255
+STA 1331
+LDA #255
+STA 1332
+LDA #255
+STA 1333
+LDA #255
+STA 1334
+LDA #255
+STA 1335
+LDA #255
+STA 1336
+LDA #255
+STA 1337
+LDA #255
+STA 1338
+LDA #255
+STA 1339
+LDA #255
+STA 1340
+LDA #255
+STA 1341
+LDA #255
+STA 1342
+LDA #255
+STA 1343
+LDA #255
+STA 1344
+LDA #255
+STA 1345
+LDA #255
+STA 1346
+LDA #255
+STA 1347
+LDA #255
+STA 1348
+LDA #255
+STA 1349
+LDA #255
+STA 1350
+LDA #255
+STA 1351
+LDA #255
+STA 1352
+LDA #255
+STA 1353
+LDA #255
+STA 1354
+LDA #255
+STA 1355
+LDA #255
+STA 1356
+LDA #255
+STA 1357
+LDA #255
+STA 1358
+LDA #255
+STA 1359
+LDA #255
+STA 1360
+LDA #255
+STA 1361
+LDA #255
+STA 1362
+LDA #255
+STA 1363
+LDA #255
+STA 1364
+LDA #255
+STA 1365
+LDA #0
+STA 1366
+LDA #255
+STA 1367
+LDA #255
+STA 1368
+LDA #255
+STA 1369
+LDA #255
+STA 1370
+LDA #255
+STA 1371
+LDA #255
+STA 1372
+LDA #255
+STA 1373
+LDA #255
+STA 1374
+LDA #255
+STA 1375
+LDA #255
+STA 1376
+LDA #255
+STA 1377
+LDA #255
+STA 1378
+LDA #255
+STA 1379
+LDA #255
+STA 1380
+LDA #255
+STA 1381
+LDA #255
+STA 1382
+LDA #255
+STA 1383
+LDA #0
+STA 1384
+LDA #255
+STA 1385
+LDA #255
+STA 1386
+LDA #0
+STA 1387
+LDA #255
+STA 1388
+LDA #255
+STA 1389
+LDA #255
+STA 1390
+LDA #255
+STA 1391
+LDA #0
+STA 1392
+LDA #255
+STA 1393
+LDA #0
+STA 1394
+LDA #255
+STA 1395
+LDA #255
+STA 1396
+LDA #0
+STA 1397
+LDA #255
+STA 1398
+LDA #255
+STA 1399
+LDA #255
+STA 1400
+LDA #255
+STA 1401
+LDA #255
+STA 1402
+LDA #255
+STA 1403
+LDA #255
+STA 1404
+LDA #255
+STA 1405
+LDA #255
+STA 1406
+LDA #255
+STA 1407
+LDA #255
+STA 1408
+LDA #255
+STA 1409
+LDA #255
+STA 1410
+LDA #255
+STA 1411
+LDA #255
+STA 1412
+LDA #255
+STA 1413
+LDA #255
+STA 1414
+LDA #255
+STA 1415
+LDA #0
+STA 1416
+LDA #255
+STA 1417
+LDA #255
+STA 1418
+LDA #0
+STA 1419
+LDA #255
+STA 1420
+LDA #255
+STA 1421
+LDA #255
+STA 1422
+LDA #255
+STA 1423
+LDA #0
+STA 1424
+LDA #255
+STA 1425
+LDA #0
+STA 1426
+LDA #255
+STA 1427
+LDA #255
+STA 1428
+LDA #255
+STA 1429
+LDA #255
+STA 1430
+LDA #255
+STA 1431
+LDA #255
+STA 1432
+LDA #255
+STA 1433
+LDA #255
+STA 1434
+LDA #255
+STA 1435
+LDA #255
+STA 1436
+LDA #255
+STA 1437
+LDA #255
+STA 1438
+LDA #255
+STA 1439
+LDA #255
+STA 1440
+LDA #255
+STA 1441
+LDA #255
+STA 1442
+LDA #255
+STA 1443
+LDA #255
+STA 1444
+LDA #255
+STA 1445
+LDA #255
+STA 1446
+LDA #255
+STA 1447
+LDA #255
+STA 1448
+LDA #255
+STA 1449
+LDA #0
+STA 1450
+LDA #255
+STA 1451
+LDA #0
+STA 1452
+LDA #255
+STA 1453
+LDA #0
+STA 1454
+LDA #255
+STA 1455
+LDA #255
+STA 1456
+LDA #255
+STA 1457
+LDA #0
+STA 1458
+LDA #255
+STA 1459
+LDA #255
+STA 1460
+LDA #255
+STA 1461
+LDA #0
+STA 1462
+LDA #255
+STA 1463
+LDA #0
+STA 1464
+LDA #255
+STA 1465
+LDA #255
+STA 1466
+LDA #255
+STA 1467
+LDA #255
+STA 1468
+LDA #255
+STA 1469
+LDA #255
+STA 1470
+LDA #255
+STA 1471
+LDA #255
+STA 1472
+LDA #255
+STA 1473
+LDA #255
+STA 1474
+LDA #255
+STA 1475
+LDA #255
+STA 1476
+LDA #255
+STA 1477
+LDA #255
+STA 1478
+LDA #255
+STA 1479
+LDA #255
+STA 1480
+LDA #255
+STA 1481
+LDA #255
+STA 1482
+LDA #255
+STA 1483
+LDA #255
+STA 1484
+LDA #255
+STA 1485
+LDA #255
+STA 1486
+LDA #255
+STA 1487
+LDA #255
+STA 1488
+LDA #255
+STA 1489
+LDA #255
+STA 1490
+LDA #255
+STA 1491
+LDA #255
+STA 1492
+LDA #255
+STA 1493
+LDA #255
+STA 1494
+LDA #255
+STA 1495
+LDA #255
+STA 1496
+LDA #255
+STA 1497
+LDA #255
+STA 1498
+LDA #255
+STA 1499
+LDA #255
+STA 1500
+LDA #255
+STA 1501
+LDA #255
+STA 1502
+LDA #255
+STA 1503
+LDA #255
+STA 1504
+LDA #255
+STA 1505
+LDA #255
+STA 1506
+LDA #255
+STA 1507
+LDA #255
+STA 1508
+LDA #255
+STA 1509
+LDA #255
+STA 1510
+LDA #255
+STA 1511
+LDA #255
+STA 1512
+LDA #255
+STA 1513
+LDA #255
+STA 1514
+LDA #255
+STA 1515
+LDA #255
+STA 1516
+LDA #255
+STA 1517
+LDA #255
+STA 1518
+LDA #255
+STA 1519
+LDA #255
+STA 1520
+LDA #255
+STA 1521
+LDA #255
+STA 1522
+LDA #255
+STA 1523
+LDA #255
+STA 1524
+LDA #255
+STA 1525
+LDA #255
+STA 1526
+LDA #255
+STA 1527
+LDA #255
+STA 1528
+LDA #255
+STA 1529
+LDA #255
+STA 1530
+LDA #255
+STA 1531
+LDA #255
+STA 1532
+LDA #255
+STA 1533
+LDA #255
+STA 1534
+LDA #255
+STA 1535
+
+            </textarea>
+          
+            <canvas class="screen" width="160" height="160"></canvas>
+          
+            <div class="debugger">
+              <input type="checkbox" class="debug" name="debug" />
+              <label for="debug">Debugger</label>
+              <div class="minidebugger"></div>
+              <div class="buttons">
+                <input type="button" value="Step" class="stepButton" />
+                <input type="button" value="Jump to..." class="gotoButton" />
+              </div>
+            </div>
+          
+            <div class="monitorControls">
+              <label for="monitoring">Monitor</label>
+              <input type="checkbox" class="monitoring" name="monitoring" />
+          
+              <label for="start">Start: $</label>
+              <input type="text" value="0" class="start" name="start" />
+              <label for="length">Length: $</label>
+              <input type="text" value="ff" class="length" name="length" />
+            </div>
+          
+            <div class="monitor"><pre><code></code></pre></div>
+            <div class="messages"><pre><code></code></pre></div>
+          
+            <div class="notes" style="display: none">Notes:
+          
+          Memory location $fe contains a new random byte on every instruction.
+          Memory location $ff contains the ascii code of the last key pressed.
+          
+          Memory locations $200 to $5ff map to the screen pixels. Different values will
+          draw different colour pixels. The colours are:
+          
+          $0: Black
+          $1: White
+          $2: Red
+          $3: Cyan
+          $4: Purple
+          $5: Green
+          $6: Blue
+          $7: Yellow
+          $8: Orange
+          $9: Brown
+          $a: Light red
+          $b: Dark grey
+          $c: Grey
+          $d: Light green
+          $e: Light blue
+          $f: Light grey
+              </div>
+         
+      
+            
+        </div>
+        <div class="example-text">
+        No geral, se tratam de instruções simples, entretanto, unindo uma gama de instruções simples, conseguimos criar
+        comportamento complexo.<br>
+        O programa ao lado desenha o logo do ICMC na memória de vídeo.
+        </div>
+        </div>
+    
+        <div class="example-container">
+          <div class="widget">
+              <div class="buttons">
+                <input type="button" value="Assemble" class="assembleButton" />
+                <input type="button" value="Run" class="runButton" />
+                <input type="button" value="Reset" class="resetButton" />
+                <input type="button" value="Hexdump" class="hexdumpButton" />
+                <input type="button" value="Disassemble" class="disassembleButton" />
+                <input type="button" value="Notes" class="notesButton" />
+              </div>
+            
+              <textarea class="code">
 ;  ___           _        __ ___  __ ___
 ; / __|_ _  __ _| |_____ / /| __|/  \_  )
 ; \__ \ ' \/ _` | / / -_) _ \__ \ () / /
@@ -347,62 +2739,69 @@ spinloop:
 
 
 gameOver:
-
-        </textarea>
-      
-        <canvas class="screen" width="160" height="160"></canvas>
-      
-        <div class="debugger">
-          <input type="checkbox" class="debug" name="debug" />
-          <label for="debug">Debugger</label>
-          <div class="minidebugger"></div>
-          <div class="buttons">
-            <input type="button" value="Step" class="stepButton" />
-            <input type="button" value="Jump to..." class="gotoButton" />
+                
+              </textarea>
+            
+              <canvas class="screen" width="160" height="160"></canvas>
+            
+              <div class="debugger">
+                <input type="checkbox" class="debug" name="debug" />
+                <label for="debug">Debugger</label>
+                <div class="minidebugger"></div>
+                <div class="buttons">
+                  <input type="button" value="Step" class="stepButton" />
+                  <input type="button" value="Jump to..." class="gotoButton" />
+                </div>
+              </div>
+            
+              <div class="monitorControls">
+                <label for="monitoring">Monitor</label>
+                <input type="checkbox" class="monitoring" name="monitoring" />
+            
+                <label for="start">Start: $</label>
+                <input type="text" value="0" class="start" name="start" />
+                <label for="length">Length: $</label>
+                <input type="text" value="ff" class="length" name="length" />
+              </div>
+            
+              <div class="monitor"><pre><code></code></pre></div>
+              <div class="messages"><pre><code></code></pre></div>
+            
+              <div class="notes" style="display: none">Notes:
+            
+            Memory location $fe contains a new random byte on every instruction.
+            Memory location $ff contains the ascii code of the last key pressed.
+            
+            Memory locations $200 to $5ff map to the screen pixels. Different values will
+            draw different colour pixels. The colours are:
+            
+            $0: Black
+            $1: White
+            $2: Red
+            $3: Cyan
+            $4: Purple
+            $5: Green
+            $6: Blue
+            $7: Yellow
+            $8: Orange
+            $9: Brown
+            $a: Light red
+            $b: Dark grey
+            $c: Grey
+            $d: Light green
+            $e: Light blue
+            $f: Light grey
+                </div>
+           
+        
+              
           </div>
-        </div>
-      
-        <div class="monitorControls">
-          <label for="monitoring">Monitor</label>
-          <input type="checkbox" class="monitoring" name="monitoring" />
-      
-          <label for="start">Start: $</label>
-          <input type="text" value="0" class="start" name="start" />
-          <label for="length">Length: $</label>
-          <input type="text" value="ff" class="length" name="length" />
-        </div>
-      
-        <div class="monitor"><pre><code></code></pre></div>
-        <div class="messages"><pre><code></code></pre></div>
-      
-        <div class="notes" style="display: none">Notes:
-      
-      Memory location $fe contains a new random byte on every instruction.
-      Memory location $ff contains the ascii code of the last key pressed.
-      
-      Memory locations $200 to $5ff map to the screen pixels. Different values will
-      draw different colour pixels. The colours are:
-      
-      $0: Black
-      $1: White
-      $2: Red
-      $3: Cyan
-      $4: Purple
-      $5: Green
-      $6: Blue
-      $7: Yellow
-      $8: Orange
-      $9: Brown
-      $a: Light red
-      $b: Dark grey
-      $c: Grey
-      $d: Light green
-      $e: Light blue
-      $f: Light grey
+          <div class="example-text">
+          As possibilidades são infinitas, por exemplo, ao lado temos uma implementação do clássico jogo snake 
           </div>
-      </div>
+          </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="../simulator/es5-shim.js"></script>
     <script src="../simulator/assembler.js"></script>
     <script src="../javascripts/scale.fix.js"></script>
