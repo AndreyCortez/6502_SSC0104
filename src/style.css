@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Font;
+  src: url(../font/Fragment_Mono/FragmentMono-Regular.ttf);
+  }
+
+body {
+  font-family: Font;
+  margin: 0;
+  padding: 0;
+  background-image: url('../Images/circuit.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+p {
+  line-height: 1.5;
+}
+
+.section-title {
+  margin-top: 30px;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #111;
+}
+
+.timeline {
+  margin-top: 30px;
+  position: relative;
+}
+
+.event {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 40px;
+}
+
+.event-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+}
+
+.event-description {
+  margin-top: 10px;
+}
+
+
+.container .content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+}
+
+.applications {
+  margin-top: 20px;
+}
+
+.applications ul {
+  list-style-type: decimal;
+  line-height: 1.5;
+}
+
+.example-text{
+  margin-top: 20px;
+  line-height: 1.5;
+  font-family: Font;
+  width: 900px;
+}
