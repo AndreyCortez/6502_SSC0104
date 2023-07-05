@@ -3,6 +3,26 @@
   src: url(../font/Fragment_Mono/FragmentMono-Regular.ttf);
   }
 
+img-group
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: inline;
+}
+
+img-container
+{  
+  display: inline-block;
+  text-align: center;
+}
+
+subtitle-container
+{
+  align-self: center;
+  display: flex;
+}
+
 body {
   font-family: Font;
   margin: 0;

@@ -112,10 +112,11 @@ footer {
 
 .example-text
 {
-  margin: 50px;
-    display: block;
-    width: 500px;
-    text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  font-size: 16px;
 
     font-family: myFirstFont;
     src: url(../font/Silkscreen-Regular.ttf);
